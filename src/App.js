@@ -3,10 +3,6 @@ import React, { useState } from "react";
 
 import "./App.css";
 
-function Header() {
-  return <h1>To do App</h1>;
-}
-
 const Todo = ({ todo }) => <div className="todo">{todo.text}</div>;
 // destructure the todo so we can use todo.text
 
@@ -42,7 +38,6 @@ function App() {
   };
   return (
     <div className="app">
-      <Header></Header>
       <div className="todo-list">
         {todos.map((item, index) => (
           <Todo key={index} index={index} todo={item} />
