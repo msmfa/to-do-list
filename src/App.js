@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-//import { DisplayDay, DisplayMonth, GetDigit } from "./DisplayTime";
+import { DisplayDay, DisplayMonth, GetDigit } from "./DisplayTime";
 
 import "./App.css";
 
 const Todo = ({ todo }) => <div className="todo">{todo.text}</div>;
-// destructure the todo so we can use todo.text
 
 function TodoForm({ addTodo }) {
   const [value, setValue] = useState("Enter to do");
@@ -37,7 +36,20 @@ function App() {
     setTodos(newTodos);
   };
   return (
-    <div className="app">
+    <div className="App">
+      <div className="date-container">
+        <div className="day">
+          <DisplayDay></DisplayDay>
+        </div>
+        <div className="month">
+          <DisplayMonth></DisplayMonth>
+        </div>
+        <div className="date">
+          <GetDigit></GetDigit>
+        </div>
+      </div>
+      <h2 className="today">Today</h2>
+
       <div className="todo-list">
         {todos.map((item, index) => (
           <Todo key={index} index={index} todo={item} />

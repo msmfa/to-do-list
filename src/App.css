@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 input {
   outline: none;
 }
@@ -28,4 +32,25 @@ input {
   font-size: 1em;
   letter-spacing: 0.04em;
   color: rgb(51, 51, 51);
+}
+
+.date-container {
+  display: flex;
+  justify-content: center;
+  color: grey;
+  font-size: 0.8em;
+  padding: 1.2em 0 0 0.5em;
+}
+
+.today {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.day {
+  padding-right: 0.5em;
+}
+
+.month {
+  padding-right: 0.3em;
 }
