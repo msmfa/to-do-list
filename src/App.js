@@ -3,11 +3,15 @@ import React, { useState } from "react";
 
 import "./App.css";
 
+function Header() {
+  return <h1>To do App</h1>;
+}
+
 const Todo = ({ todo }) => <div className="todo">{todo.text}</div>;
 // destructure the todo so we can use todo.text
 
 function TodoForm({ addTodo }) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("Enter to do");
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -17,8 +21,9 @@ function TodoForm({ addTodo }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <input
+        placeholder="enter your todos here"
         type="text"
         className="input"
         value={value}
@@ -29,11 +34,7 @@ function TodoForm({ addTodo }) {
 }
 
 function App() {
-  const [todos, setTodos] = useState([
-    { text: "Learn about useState" },
-    { text: "Learn more about react" },
-    { text: "Push to githib" }
-  ]);
+  const [todos, setTodos] = useState([{ text: "" }]);
 
   const addTodo = text => {
     const newTodos = [...todos, { text }];
@@ -41,6 +42,7 @@ function App() {
   };
   return (
     <div className="app">
+      <Header></Header>
       <div className="todo-list">
         {todos.map((item, index) => (
           <Todo key={index} index={index} todo={item} />
