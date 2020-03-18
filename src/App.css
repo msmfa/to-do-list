@@ -20,6 +20,7 @@ input {
   border: none;
 }
 .todo {
+  display: flex;
   border-bottom: 1px solid rgb(199, 199, 199);
   width: 80vw;
 }
@@ -53,4 +54,19 @@ input {
 
 .month {
   padding-right: 0.3em;
+}
+
+.form {
+  display: flex;
+}
+
+.delete-button {
+  font-size: 0.9em;
+  border: none;
+  margin-bottom: 0.3em;
+  color: grey;
+}
+
+.delete-button:hover {
+  color: red;
 }

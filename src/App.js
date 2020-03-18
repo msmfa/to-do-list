@@ -3,7 +3,13 @@ import { DisplayDay, DisplayMonth, GetDigit } from "./DisplayTime";
 
 import "./App.css";
 
-const Todo = ({ todo }) => <div className="todo">{todo.text}</div>;
+function Todo({ todo }) {
+  return (
+    <div>
+      <div className="todo">{todo.text}</div>
+    </div>
+  );
+}
 
 function TodoForm({ addTodo }) {
   const [value, setValue] = useState("Enter to do");
@@ -24,6 +30,7 @@ function TodoForm({ addTodo }) {
         value={value}
         onChange={e => setValue(e.target.value)}
       ></input>
+      <button className="delete-button">X</button>
     </form>
   );
 }
